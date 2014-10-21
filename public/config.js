@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'chess';
-	var applicationModuleVendorDependencies = ['ngResource', 'ngCookies',  'ngAnimate',  'ngTouch',  'ngSanitize',  'ui.router', 'ui.utils', 'ngMaterial'];
+	var applicationModuleVendorDependencies = ['ngResource', 'ngCookies',  'ngTouch',  'ngSanitize',  'ui.router', 'ui.utils'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
