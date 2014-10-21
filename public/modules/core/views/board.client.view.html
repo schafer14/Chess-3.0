@@ -1,0 +1,13 @@
+<div class="board-container" ng-class="{'rotate-180': board.rotated}">
+	<div class="board">
+		<div class="board-inner">
+			<div ng-repeat="squ in squaresIter track by $index" class="board-row">
+				<div class="square" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)">
+					<div class="centered-image" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{'square-selected': selected === $parent.$index * 8 + $index, 'color-red': board.highlighted.red.indexOf($parent.$index * 8 + $index) > -1, 'color-yellow': board.highlighted.yellow.indexOf($parent.$index * 8 + $index) > -1, 'color-blue': board.highlighted.blue.indexOf($parent.$index * 8 + $index) > -1}">
+						<img ng-src="svgs/{{squares[$parent.$index * 8 + $index] || 'x'}}.svg" width="100%" ng-class="{'rotate-180': board.rotated}">{{square}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

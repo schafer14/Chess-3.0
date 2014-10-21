@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://localhost:3000/#!/ -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+	<title>CHESS - Development Environment</title>
+
+	<!-- General META -->
+	<meta charset="utf-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- Semantic META -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<!-- Facebook META -->
+	<meta property="fb:app_id" content="APP_ID">
+	<meta property="og:site_name" content="CHESS - Development Environment">
+	<meta property="og:title" content="CHESS - Development Environment">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="http://localhost:3000/">
+	<meta property="og:image" content="/img/brand/logo.png">
+	<meta property="og:type" content="website">
+
+	<!-- Twitter META -->
+	<meta name="twitter:title" content="CHESS - Development Environment">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:url" content="http://localhost:3000/">
+	<meta name="twitter:image" content="/img/brand/logo.png">
+
+	<!-- Fav Icon -->
+	<link href="http://localhost:3000/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+	<!--Application CSS Files-->
+	<link rel="stylesheet" href="http://localhost:3000/lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="http://localhost:3000/lib/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="http://localhost:3000/lib/angular-material/angular-material.css">
+	<link rel="stylesheet" href="http://localhost:3000/modules/core/css/core.css">
+	
+
+	<!-- HTML5 Shim -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css"></style></head>
+
+<body class="">
+	<!-- ngInclude: '/modules/core/views/header.client.view.html' --><header data-ng-include="&#39;/modules/core/views/header.client.view.html&#39;" class="navbar navbar-fixed-top navbar-inverse ng-scope"><div class="container ng-scope" data-ng-controller="HeaderController">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()" tabindex="0">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a href="./CHESS - Development Environment_files/CHESS - Development Environment.html" class="navbar-brand">Chess</a>
+	</div>
+	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+		
+	</nav>
+</div></header>
+	<section class="content">
+		<section class="container">
+			
+	<!-- uiView:  --><section data-ui-view="" class="ng-scope"><section data-ng-controller="GameController" class="ng-scope">
+	<div class="jumbotron text-center">
+		<div class="row">
+			<p class="lead">
+				CHESS
+			</p>
+		</div>
+	</div>
+
+	<div board="board" class="col-md-6 col-md-offset-3 ng-isolate-scope"><div class="board-container" ng-class="{&#39;rotate-180&#39;: board.rotated}">
+	<div class="board">
+		<div class="board-inner">
+			<!-- ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/51.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/51.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/31.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/31.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/30.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/30.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/50.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/50.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index --><div ng-repeat="squ in squaresIter track by $index" class="board-row ng-scope">
+				<!-- ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index --><div class="square ng-scope" ng-repeat="square in squaresIter track by $index" ng-click="click($parent.$index * 8 + $index, $event)" ng-dblclick="dblClick($parent.$index * 8 + $index, $event)" tabindex="0">
+					<div class="centered-image ng-binding" ang-show="!!squares[$parent.$index * 8 + $index]" ng-class="{&#39;square-selected&#39;: selected === $parent.$index * 8 + $index, &#39;color-red&#39;: board.highlighted.red.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-yellow&#39;: board.highlighted.yellow.indexOf($parent.$index * 8 + $index) &gt; -1, &#39;color-blue&#39;: board.highlighted.blue.indexOf($parent.$index * 8 + $index) &gt; -1}">
+						<img ng-src="svgs/x.svg" width="100%" ng-class="{&#39;rotate-180&#39;: board.rotated}" src="./CHESS - Development Environment_files/x.svg">
+					</div>
+				</div><!-- end ngRepeat: square in squaresIter track by $index -->
+			</div><!-- end ngRepeat: squ in squaresIter track by $index -->
+		</div>
+	</div>
+</div></div>
+</section>
+</section>
+
+		</section>
+	</section>
+
+	<!--Embedding The User Object-->
+	<script type="text/javascript">
+		var user = "";
+	</script>
+
+	<!--Application JavaScript Files-->
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-resource.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-cookies.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-animate.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-touch.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-sanitize.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-ui-router.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/ui-utils.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-aria.min.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/hammer.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/angular-material.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/config.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/application.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/core.client.module.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/core.client.routes.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/game.client.controller.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/header.client.controller.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/board.client.directive.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/bishop.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/board.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/config.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/king.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/knight.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/menus.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/pawn.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/piece.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/queen.client.service.js"></script>
+	<script type="text/javascript" src="./CHESS - Development Environment_files/rook.client.service.js"></script>
+	 
+
+	
+	<!--Livereload script rendered -->
+	<script type="text/javascript" src="./CHESS - Development Environment_files/livereload.js"></script>
+
+	
+
+
+</body></html>
