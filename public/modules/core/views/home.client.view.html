@@ -1,11 +1,32 @@
 <section data-ng-controller="GameController">
-	<div class="jumbotron text-center">
-		<div class="row">
-			<p class="lead">
-				CHESS
-			</p>
+	<div class="row col-md-8 col-md-offset-2">
+		<div class="col-md-4">
+			<div class="thumbnail sky-blue">
+				<span class="fa fa-play fa-4x"></span>
+				<div class="caption">
+					<h3 class="center-text">Play</h3>
+					<p class="center-text">...</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail light-red">
+				<span class="fa fa-puzzle-piece fa-4x"></span>
+				<div class="caption">
+					<h3 class="center-text">Learn</h3>
+					<p class="center-text">...</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail light-yellow">
+				<span class="fa fa-graduation-cap fa-4x fa-white"></span>
+				<div class="caption">
+					<h3 class="center-text">Teach</h3>
+					<p class="center-text">...</p>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	<div board="board" class="col-md-6 col-md-offset-3"></div>
 </section>

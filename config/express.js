@@ -18,7 +18,8 @@ var express = require('express'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
-	path = require('path');
+	path = require('path'),
+	favicon = require('serve-favicon');
 
 module.exports = function(db) {
 	// Initialize express app
@@ -78,6 +79,9 @@ module.exports = function(db) {
 	}));
 	app.use(bodyParser.json());
 	app.use(methodOverride());
+
+	// Favicon
+	app.use(favicon(__dirname + './../public/favicon.ico'));
 
 	// Enable jsonp
 	app.enable('jsonp callback');

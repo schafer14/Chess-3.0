@@ -1,0 +1,84 @@
+
+.square {
+	width: 12.5%;
+	display: table-cell;
+}
+
+.board-row:nth-child(even) .square:nth-child(odd), .board-row:nth-child(odd) .square:nth-child(even) {
+	background-color: #2F632B;
+}
+
+.board-row:nth-child(even) .square:nth-child(even), .board-row:nth-child(odd) .square:nth-child(odd) {
+	/*background-color: white;*/
+}
+
+.board {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.board-container {
+	position: relative;
+	width: 100%;
+}
+
+.board-container:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	
+}
+
+.board-inner {
+	width: 100%;
+	height: 100%;
+	display: table;
+	border: 1px solid black;
+}
+
+.board-row {
+	display: table-row;
+	width: 100%;
+	/*height: 12.5%;*/
+}
+
+.centered-image {
+	height: 80%;
+	width: 80%;
+	margin: 10%;
+	text-align:center;
+    display:block;
+}
+
+.rotate-90 {
+	-ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.rotate-180 {
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+.square-selected {
+	outline: 4px solid aquamarine;
+}
+
+.color-red {
+	background-color: #FF6B6E;
+	border-radius: 8px;
+}
+
+.color-blue { 
+	background-color: #6B75FF;
+	border-radius: 8px;
+}
+
+.color-yellow {
+	background-color: #F3FF6B;
+	border-radius: 8px;
+}
